@@ -11,7 +11,10 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var emailText: UILabel!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var passwordText: UILabel!
+    @IBOutlet weak var addUserButton: UIButton!
     
     var viewModel = LoginViewModel()
     
@@ -21,6 +24,8 @@ class ViewController: UIViewController {
         self.view.backgroundColor = UIColor.orange
         
         setupBackgroundRectangle()
+        setupTextFieldStyles()
+        setupButton()
         setupBindings()
     }
     
@@ -36,6 +41,15 @@ class ViewController: UIViewController {
         viewModel.password = password
         viewModel.login()
     }
+    
+    @IBAction func addUserButtonTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Register", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "RegisterViewController") as! RegisterViewController
+        
+        
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+    
     
     func setupBindings() {
         viewModel.onLoginSuccess = { [weak self] user in
@@ -58,9 +72,8 @@ class ViewController: UIViewController {
     }
     
     func setupBackgroundRectangle() {
-        // Membuat UIView sebagai background rectangle
         let backgroundView = UIView()
-        backgroundView.backgroundColor = UIColor.white
+        backgroundView.backgroundColor = UIColor.customGrey
         backgroundView.layer.cornerRadius = 24
         backgroundView.layer.shadowColor = UIColor.black.cgColor
         backgroundView.layer.shadowOpacity = 0.2
@@ -70,17 +83,35 @@ class ViewController: UIViewController {
         backgroundView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(backgroundView)
         
-        // Menambahkan constraints
         NSLayoutConstraint.activate([
             backgroundView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0),
             backgroundView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0),
-            backgroundView.topAnchor.constraint(equalTo: self.emailTextField.topAnchor, constant: -20),
+            backgroundView.topAnchor.constraint(equalTo: self.emailText.topAnchor, constant: -20),
             backgroundView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0)
         ])
         
-        // Membawa emailTextField, passwordTextField, dan loginButton ke depan
         self.view.bringSubviewToFront(emailTextField)
         self.view.bringSubviewToFront(passwordTextField)
         self.view.bringSubviewToFront(loginButton)
+        self.view.bringSubviewToFront(emailText)
+        self.view.bringSubviewToFront(passwordText)
+        self.view.bringSubviewToFront(addUserButton)
+    }
+    
+    func setupTextFieldStyles() {
+        emailTextField.layer.cornerRadius = 25
+        emailTextField.layer.borderWidth = 1
+        emailTextField.layer.borderColor = UIColor.darkGrey.cgColor
+        emailTextField.layer.masksToBounds = true
+        
+        passwordTextField.layer.cornerRadius = 25
+        passwordTextField.layer.borderWidth = 1
+        passwordTextField.layer.borderColor = UIColor.darkGrey.cgColor
+        passwordTextField.layer.masksToBounds = true
+    }
+    
+    func setupButton() {
+        loginButton.layer.cornerRadius = 100
+        addUserButton.layer.cornerRadius = 100
     }
 }

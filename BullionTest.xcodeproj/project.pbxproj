@@ -17,6 +17,8 @@
 		91CCF6F32C1951340089109C /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CCF6F22C1951340089109C /* UserModel.swift */; };
 		91CCF6FF2C1957B70089109C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 91CCF6FE2C1957B70089109C /* Alamofire */; };
 		91CCF7012C1957B70089109C /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 91CCF7002C1957B70089109C /* AlamofireDynamic */; };
+		91CCF7032C198A9D0089109C /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91CCF7022C198A9D0089109C /* Register.storyboard */; };
+		91CCF7052C1991230089109C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CCF7042C1991230089109C /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		91CCF6E82C194F9A0089109C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91CCF6F02C1951190089109C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		91CCF6F22C1951340089109C /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		91CCF7022C198A9D0089109C /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
+		91CCF7042C1991230089109C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,8 @@
 		91CCF6FC2C1956CC0089109C /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				91CCF7022C198A9D0089109C /* Register.storyboard */,
+				91CCF7042C1991230089109C /* RegisterViewController.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -185,6 +191,7 @@
 				91CCF6E72C194F9A0089109C /* LaunchScreen.storyboard in Resources */,
 				91CCF6E42C194F9A0089109C /* Assets.xcassets in Resources */,
 				91CCF6E22C194F990089109C /* Main.storyboard in Resources */,
+				91CCF7032C198A9D0089109C /* Register.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +205,7 @@
 				91CCF6DF2C194F990089109C /* ViewController.swift in Sources */,
 				91CCF6DB2C194F990089109C /* AppDelegate.swift in Sources */,
 				91CCF6DD2C194F990089109C /* SceneDelegate.swift in Sources */,
+				91CCF7052C1991230089109C /* RegisterViewController.swift in Sources */,
 				91CCF6F32C1951340089109C /* UserModel.swift in Sources */,
 				91CCF6F12C1951190089109C /* LoginViewModel.swift in Sources */,
 			);
